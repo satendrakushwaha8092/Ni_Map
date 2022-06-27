@@ -1,15 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const usercontroller = require("./usercontroller")
-const authentication = require("./auth")
+const pdfparse=require('./pdfparse')
 
-router.post("/register", usercontroller.createUser)
-
-router.post("/login", usercontroller.loginUser)
-
-router.put("/update/:id",authentication.authentication, usercontroller.updateuser)
-
-router.get("/logout",usercontroller.logout)
-
+router.post("/pdfparse", pdfparse.pdfparse)
 
 module.exports = router;
